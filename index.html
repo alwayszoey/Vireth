@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vireth Page</title>
+  <link rel="icon" href="logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<div id="home" class="relative flex flex-col overflow-hidden" style="min-height:100svh;">
+
+  <!-- bg layers -->
+  <div class="absolute inset-0" style="background:url('background.jpeg') center/cover no-repeat;z-index:0;"></div>
+  <div class="absolute inset-0" style="background:rgba(0,0,0,.28);z-index:1;"></div>
+  <div class="absolute bottom-0 left-0 w-full pointer-events-none" style="height:320px;background:linear-gradient(to top,#000 30%,transparent);z-index:2;"></div>
+
+  <!-- ── Bokeh orbs (soft blurred circles) ── -->
+  <div class="absolute pointer-events-none" style="z-index:3;">
+    <div style="position:absolute;top:18%;left:12%;width:160px;height:160px;border-radius:50%;background:rgba(200,230,255,.06);filter:blur(40px);animation:bokehDrift 9s ease-in-out infinite;"></div>
+    <div style="position:absolute;top:55%;left:75%;width:120px;height:120px;border-radius:50%;background:rgba(180,210,240,.05);filter:blur(32px);animation:bokehDrift 12s ease-in-out 3s infinite;"></div>
+    <div style="position:absolute;top:30%;left:60%;width:80px;height:80px;border-radius:50%;background:rgba(220,240,255,.07);filter:blur(24px);animation:bokehDrift 7s ease-in-out 1.5s infinite;"></div>
+  </div>
+
+  <!-- ── Twinkling stars ── -->
+  <div class="absolute inset-0 pointer-events-none" style="z-index:3;">
+    <div style="position:absolute;top:10%;left:20%;font-size:6px;color:#fff;animation:twinkle 2.5s ease-in-out .3s infinite;">✦</div>
+    <div style="position:absolute;top:15%;left:70%;font-size:4px;color:#fff;animation:twinkle 3.1s ease-in-out 1s infinite;">✦</div>
+    <div style="position:absolute;top:25%;left:45%;font-size:5px;color:#fff;animation:twinkle 2s ease-in-out .7s infinite;">✧</div>
+    <div style="position:absolute;top:40%;left:85%;font-size:6px;color:#fff;animation:twinkle 3.8s ease-in-out .2s infinite;">✦</div>
+    <div style="position:absolute;top:20%;left:35%;font-size:3px;color:#fff;animation:twinkle 2.2s ease-in-out 1.8s infinite;">✧</div>
+    <div style="position:absolute;top:60%;left:15%;font-size:5px;color:#fff;animation:twinkle 3.4s ease-in-out .5s infinite;">✦</div>
+    <div style="position:absolute;top:8%;left:55%;font-size:4px;color:#fff;animation:twinkle 2.9s ease-in-out 2.1s infinite;">✧</div>
+    <div style="position:absolute;top:35%;left:8%;font-size:6px;color:#fff;animation:twinkle 4s ease-in-out 1.2s infinite;">✦</div>
+    <div style="position:absolute;top:50%;left:90%;font-size:4px;color:#fff;animation:twinkle 2.7s ease-in-out .9s infinite;">✧</div>
+    <div style="position:absolute;top:12%;left:92%;font-size:5px;color:#fff;animation:twinkle 3.2s ease-in-out 1.5s infinite;">✦</div>
+  </div>
+
+  <!-- ── Floating runes ── -->
+  <div class="absolute inset-0 pointer-events-none" style="z-index:3;font-weight:200;font-family:'Mitr',sans-serif;">
+    <span style="position:absolute;bottom:35%;left:30%;font-size:.85rem;color:rgba(255,255,255,.18);animation:runeFloat 6s ease-in-out 0s infinite;">ᚠ</span>
+    <span style="position:absolute;bottom:30%;left:65%;font-size:.75rem;color:rgba(255,255,255,.14);animation:runeFloat 7.5s ease-in-out 1.5s infinite;">ᚢ</span>
+    <span style="position:absolute;bottom:40%;left:18%;font-size:.7rem;color:rgba(255,255,255,.12);animation:runeFloat 5.5s ease-in-out 3s infinite;">ᚦ</span>
+    <span style="position:absolute;bottom:32%;left:78%;font-size:.9rem;color:rgba(255,255,255,.15);animation:runeFloat 8s ease-in-out .8s infinite;">ᚨ</span>
+    <span style="position:absolute;bottom:28%;left:50%;font-size:.65rem;color:rgba(255,255,255,.1);animation:runeFloat 6.5s ease-in-out 4s infinite;">ᚱ</span>
+  </div>
+
+  <!-- ── Magic circle at feet ── -->
+  <div class="absolute pointer-events-none" style="left:50%;bottom:0;z-index:4;width:clamp(220px,36%,480px);height:clamp(220px,36%,480px);transform:translate(-50%,-8%);">
+    <!-- soft aura glow -->
+    <div style="position:absolute;top:50%;left:50%;width:75%;height:75%;background:radial-gradient(ellipse,rgba(180,210,255,.18) 0%,transparent 70%);border-radius:50%;transform:translate(-50%,-50%);animation:auraGlow 4s ease-in-out infinite;"></div>
+    <!-- outer ring (slow rotate) -->
+    <svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:magicRingRotate 18s linear infinite;" width="100%" height="100%" viewBox="0 0 300 300">
+      <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1" stroke-dasharray="8 6"/>
+      <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="3"/>
+      <polygon points="150,12 287,225 13,225" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+    </svg>
+    <!-- inner ring (reverse rotate) -->
+    <svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:magicRingRotateRev 10s linear infinite;" width="75%" height="75%" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-dasharray="4 10"/>
+      <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1" stroke-dasharray="2 8"/>
+    </svg>
+    <!-- sparkles on ring -->
+    <div style="position:absolute;top:8%;left:50%;font-size:8px;color:rgba(255,255,255,.6);animation:sparkle 2.2s ease-in-out .4s infinite;">✦</div>
+    <div style="position:absolute;top:50%;left:4%;font-size:6px;color:rgba(255,255,255,.5);animation:sparkle 3s ease-in-out 1s infinite;">✧</div>
+    <div style="position:absolute;top:50%;left:92%;font-size:7px;color:rgba(255,255,255,.55);animation:sparkle 2.6s ease-in-out .2s infinite;">✦</div>
+    <div style="position:absolute;top:88%;left:25%;font-size:5px;color:rgba(255,255,255,.4);animation:sparkle 2s ease-in-out 1.8s infinite;">✧</div>
+    <div style="position:absolute;top:88%;left:70%;font-size:6px;color:rgba(255,255,255,.45);animation:sparkle 2.8s ease-in-out .9s infinite;">✦</div>
+  </div>
+
+  <!-- ── Navbar (z-index:20, always on top) ── -->
+  <nav class="navbar-anim relative w-full flex justify-center pt-5 pb-3 px-4" style="z-index:20;">
+    <ul class="glass nav-links flex items-center gap-1 sm:gap-3 px-4 sm:px-7 py-2 rounded-full font-medium text-white text-sm" style="list-style:none;margin:0;">
+      <li><img src="logo.webp" alt="logo" style="height:36px;" class="cursor-pointer" /></li>
+      <li><a href="#home"      class="px-3 py-1 rounded-full hover:bg-white/20 transition text-white no-underline whitespace-nowrap">หน้าแรก</a></li>
+      <li><a href="#downloads" class="px-3 py-1 rounded-full hover:bg-white/20 transition text-white no-underline whitespace-nowrap">ดาวน์โหลด</a></li>
+      <li class="hide-mobile"><a href="#gallery" class="px-3 py-1 rounded-full hover:bg-white/20 transition text-white no-underline whitespace-nowrap">แกลเลอรี</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Title text (z-index:5, BEHIND character) ── -->
+  <div class="relative flex-1 flex flex-col items-center justify-center" style="z-index:5;padding-bottom:12vh;">
+    <h1 class="hero-title hero-title-anim text-white font-black select-none flex leading-none m-0"
+        style="letter-spacing:-.03em;font-weight:900;">
+      <span class="letter-hero" style="animation-delay:.00s">W</span>
+      <span class="letter-hero" style="animation-delay:.12s">E</span>
+      <span class="letter-hero" style="animation-delay:.24s">L</span>
+      <span class="letter-hero" style="animation-delay:.36s">C</span>
+      <span class="letter-hero" style="animation-delay:.48s">O</span>
+      <span class="letter-hero" style="animation-delay:.60s">M</span>
+      <span class="letter-hero" style="animation-delay:.72s">E</span>
+    </h1>
+  </div>
+
+  <!-- ── Character (z-index:10, IN FRONT of title) ── -->
+  <div class="hero-char-wrap absolute bottom-0 pointer-events-none"
+       style="left:50%;transform:translateX(-50%);width:clamp(200px,28%,440px);z-index:10;">
+    <img src="frieren.png" alt="Frieren" class="hero-char"
+         style="width:100%;object-fit:contain;display:block;transform-origin:bottom center;" />
+  </div>
+
+  <!-- ── Description card (z-index:11, in front of everything except navbar) ── -->
+  <div class="hero-desc absolute text-white text-sm max-w-xs rounded-2xl p-4"
+       style="bottom:clamp(4rem,8vh,6rem);left:clamp(1rem,5vw,3rem);
+              backdrop-filter:blur(12px);background:rgba(255,255,255,.07);
+              border:1px solid rgba(255,255,255,.14);z-index:11;
+              font-weight:300;line-height:1.7;">แจกซอร์สโค้ด ไฟล์ ZIP Asset<br/>จากคลิปล่าสุดในช่องฟรี
+  </div>
+
+</div>
+
+<!-- ═══════════════════════ DOWNLOADS ═══════════════════════ -->
+<section id="downloads" style="background:#000;padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,3rem);">
+
+  <!-- Section heading -->
+  <div class="text-center mb-12">
+    <h2 id="dl-heading" class="text-white font-black m-0"
+        style="font-size:clamp(2rem,7vw,4.5rem);letter-spacing:-.03em;">
+      <span class="letter-sec" data-i="0">ด</span><span class="letter-sec" data-i="1">า</span><span class="letter-sec" data-i="2">ว</span><span class="letter-sec" data-i="3">น</span><span class="letter-sec" data-i="4">์</span><span class="letter-sec" data-i="5">โ</span><span class="letter-sec" data-i="6">ห</span><span class="letter-sec" data-i="7">ล</span><span class="letter-sec" data-i="8">ด</span>
+    </h2>
+    <p style="color:rgba(255,255,255,.3);font-size:.8rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;margin-top:.5rem;">
+      Latest releases
+    </p>
+  </div>
+
+  <!-- Card grid -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:1.25rem;max-width:1100px;margin:0 auto;">
+
+    <!-- ─ Card 1: Frieren Landing Page ─ -->
+    <div class="dl-card card-anim" data-ci="0">
+      <!-- Image / video carousel -->
+      <div class="img-reel p-3" style="padding-bottom:0;">
+        <img src="image01.jpeg" alt="preview" />
+        <img src="image02.jpeg" alt="preview" />
+        <img src="image03.jpeg" alt="preview" />
+        <!-- YouTube embed — replace VIDEO_ID with real ID -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen style="border:none;border-radius:10px;"></iframe>
+      </div>
+
+      <div style="padding:1rem 1rem 1.25rem;">
+        <!-- Meta -->
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap;">
+          <span class="tag">Source Code</span>
+          <span class="tag">.ZIP</span>
+          <span class="tag">React · Vite</span>
+          <span style="margin-left:auto;font-size:.68rem;font-weight:400;color:rgba(255,255,255,.3);">Apr 2025</span>
+        </div>
+
+        <!-- Title -->
+        <h3 style="color:#fff;font-size:1rem;font-weight:600;margin:0 0 .4rem;line-height:1.35;">Landing Page</h3>
+        <p style="color:rgba(255,255,255,.45);font-size:.82rem;font-weight:300;margin:0 0 .75rem;line-height:1.55;">
+          ซอร์สโค้ดเต็ม React + Vite + Tailwind สำหรับหน้าเว็บ Frieren พร้อม Animation ครบชุด
+        </p>
+
+        <!-- Expandable detail -->
+        <div>
+          <button onclick="toggleDetail(this)" style="background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.4);font-size:.78rem;font-weight:400;font-family:inherit;">
+            <svg id="chevron" style="width:14px;height:14px;transition:transform .3s;" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 011.06 0L10 11.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.22 9.28a.75.75 0 010-1.06z"/></svg>
+            วิธีใช้งาน / รายละเอียด
+          </button>
+          <div class="detail-body" style="margin-top:.6rem;">
+            <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:.85rem;font-size:.8rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;">
+              <strong style="font-weight:600;color:#fff;display:block;margin-bottom:.4rem;">วิธีใช้งาน</strong>
+              1. แตกไฟล์ ZIP ออกมา<br/>
+              2. รัน <code style="background:rgba(255,255,255,.1);padding:.1rem .35rem;border-radius:4px;font-size:.75rem;">npm install</code> ใน terminal<br/>
+              3. รัน <code style="background:rgba(255,255,255,.1);padding:.1rem .35rem;border-radius:4px;font-size:.75rem;">npm run dev</code> เพื่อเปิด dev server<br/>
+              4. แก้ไขไฟล์ใน <code style="background:rgba(255,255,255,.1);padding:.1rem .35rem;border-radius:4px;font-size:.75rem;">src/</code> ตามต้องการ<br/>
+              5. Build ด้วย <code style="background:rgba(255,255,255,.1);padding:.1rem .35rem;border-radius:4px;font-size:.75rem;">npm run build</code>
+              <div style="margin-top:.6rem;padding-top:.6rem;border-top:1px solid rgba(255,255,255,.08);">
+                <strong style="font-weight:500;color:rgba(255,255,255,.8);">Requirement:</strong> Node.js 18+, npm
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="openGateway('https://github.com/geoosama/frieren-landing-page/archive/refs/heads/main.zip','Landing Page','https://youtube.com')"
+          class="btn-main" style="margin-top:1rem;">
+          รับลิงก์ดาวน์โหลด
+        </button>
+      </div>
+    </div>
+
+    <!-- ─ Card 2: Frieren Image Pack ─ -->
+    <div class="dl-card card-anim" data-ci="1">
+      <div class="img-reel p-3" style="padding-bottom:0;">
+        <img src="image04.jpeg" alt="preview" />
+        <img src="image05.jpeg" alt="preview" />
+        <img src="image06.jpeg" alt="preview" />
+        <img src="image07.jpeg" alt="preview" />
+        <img src="image08.jpeg" alt="preview" />
+      </div>
+      <div style="padding:1rem 1rem 1.25rem;">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap;">
+          <span class="tag">Image Pack</span>
+          <span class="tag">.ZIP</span>
+          <span style="margin-left:auto;font-size:.68rem;font-weight:400;color:rgba(255,255,255,.3);">Mar 2025</span>
+        </div>
+        <h3 style="color:#fff;font-size:1rem;font-weight:600;margin:0 0 .4rem;line-height:1.35;">Frieren Image Pack</h3>
+        <p style="color:rgba(255,255,255,.45);font-size:.82rem;font-weight:300;margin:0 0 .75rem;line-height:1.55;">
+          รูปภาพ Frieren คุณภาพสูงครบชุด พร้อมใช้ใน Project หรืองานออกแบบ
+        </p>
+        <div>
+          <button onclick="toggleDetail(this)" style="background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.4);font-size:.78rem;font-weight:400;font-family:inherit;">
+            <svg style="width:14px;height:14px;transition:transform .3s;" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 011.06 0L10 11.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.22 9.28a.75.75 0 010-1.06z"/></svg>
+            วิธีใช้งาน / รายละเอียด
+          </button>
+          <div class="detail-body" style="margin-top:.6rem;">
+            <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:.85rem;font-size:.8rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;">
+              <strong style="font-weight:600;color:#fff;display:block;margin-bottom:.4rem;">รายละเอียด</strong>
+              • ไฟล์ JPEG ความละเอียดสูง 16 ภาพ<br/>
+              • ใช้ได้ฟรีสำหรับโปรเจกต์ส่วนตัวและการศึกษา<br/>
+              • ห้ามนำไปใช้เชิงพาณิชย์โดยไม่ได้รับอนุญาต
+            </div>
+          </div>
+        </div>
+        <button onclick="openGateway('#','Frieren Image Pack','https://youtube.com')"
+          class="btn-main" style="margin-top:1rem;">
+          รับลิงก์ดาวน์โหลด
+        </button>
+      </div>
+    </div>
+
+    <!-- ─ Card 3: CSS Animation Pack ─ -->
+    <div class="dl-card card-anim" data-ci="2">
+      <div class="img-reel p-3" style="padding-bottom:0;">
+        <img src="image09.jpeg" alt="preview" />
+        <img src="image10.jpeg" alt="preview" />
+        <img src="image11.jpeg" alt="preview" />
+      </div>
+      <div style="padding:1rem 1rem 1.25rem;">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap;">
+          <span class="tag">CSS</span>
+          <span class="tag">Animation</span>
+          <span class="tag">ใหม่!</span>
+          <span style="margin-left:auto;font-size:.68rem;font-weight:400;color:rgba(255,255,255,.3);">Apr 2025</span>
+        </div>
+        <h3 style="color:#fff;font-size:1rem;font-weight:600;margin:0 0 .4rem;line-height:1.35;">CSS Animation Pack</h3>
+        <p style="color:rgba(255,255,255,.45);font-size:.82rem;font-weight:300;margin:0 0 .75rem;line-height:1.55;">
+          CSS Keyframe Animations ครบชุด — Letter Drop, Blur Reveal, Slide In พร้อม Demo HTML
+        </p>
+        <div>
+          <button onclick="toggleDetail(this)" style="background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.4);font-size:.78rem;font-weight:400;font-family:inherit;">
+            <svg style="width:14px;height:14px;transition:transform .3s;" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 011.06 0L10 11.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.22 9.28a.75.75 0 010-1.06z"/></svg>
+            วิธีใช้งาน / รายละเอียด
+          </button>
+          <div class="detail-body" style="margin-top:.6rem;">
+            <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:.85rem;font-size:.8rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;">
+              <strong style="font-weight:600;color:#fff;display:block;margin-bottom:.4rem;">วิธีใช้งาน</strong>
+              1. เปิดไฟล์ <code style="background:rgba(255,255,255,.1);padding:.1rem .35rem;border-radius:4px;font-size:.75rem;">animations.css</code><br/>
+              2. Copy class ที่ต้องการไปใส่ใน project<br/>
+              3. เพิ่ม class ให้กับ element ใน HTML<br/>
+              4. ปรับ duration / delay ตามต้องการ
+            </div>
+          </div>
+        </div>
+        <button onclick="openGateway('#','CSS Animation Pack','https://youtube.com')"
+          class="btn-main" style="margin-top:1rem;">
+          รับลิงก์ดาวน์โหลด
+        </button>
+      </div>
+    </div>
+
+    <!-- ─ Card 4: Anime Dark UI Kit ─ -->
+    <div class="dl-card card-anim" data-ci="3">
+      <div class="img-reel p-3" style="padding-bottom:0;">
+        <img src="image12.jpeg" alt="preview" />
+        <img src="image13.jpeg" alt="preview" />
+        <img src="image14.jpeg" alt="preview" />
+      </div>
+      <div style="padding:1rem 1rem 1.25rem;">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap;">
+          <span class="tag">UI Kit</span>
+          <span class="tag">Template</span>
+          <span style="margin-left:auto;font-size:.68rem;font-weight:400;color:rgba(255,255,255,.3);">Coming soon</span>
+        </div>
+        <h3 style="color:#fff;font-size:1rem;font-weight:600;margin:0 0 .4rem;line-height:1.35;">Anime Dark UI Kit</h3>
+        <p style="color:rgba(255,255,255,.45);font-size:.82rem;font-weight:300;margin:0 0 .75rem;line-height:1.55;">
+          ชุด Component สไตล์ Anime Dark — Card, NavBar, Modal, Countdown ครบในชุดเดียว
+        </p>
+        <div>
+          <button onclick="toggleDetail(this)" style="background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.4);font-size:.78rem;font-weight:400;font-family:inherit;">
+            <svg style="width:14px;height:14px;transition:transform .3s;" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 011.06 0L10 11.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.22 9.28a.75.75 0 010-1.06z"/></svg>
+            วิธีใช้งาน / รายละเอียด
+          </button>
+          <div class="detail-body" style="margin-top:.6rem;">
+            <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:.85rem;font-size:.8rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;">
+              <strong style="font-weight:600;color:#fff;display:block;margin-bottom:.4rem;">รายละเอียด</strong>
+              Kit นี้ประกอบด้วย:<br/>
+              • NavBar แบบ Frosted Glass<br/>
+              • Card Component พร้อม Glow Effect<br/>
+              • Modal + Countdown Timer<br/>
+              • Animated Section Headings<br/>
+              รองรับทั้ง HTML/CSS และ React
+            </div>
+          </div>
+        </div>
+        <button onclick="openGateway('#','Anime Dark UI Kit','https://youtube.com')"
+          class="btn-main" style="margin-top:1rem;">
+          รับลิงก์ดาวน์โหลด
+        </button>
+      </div>
+    </div>
+
+    <!-- ─ Card 5: Wallpaper Pack ─ -->
+    <div class="dl-card card-anim" data-ci="4">
+      <div class="img-reel p-3" style="padding-bottom:0;">
+        <img src="image15.jpeg" alt="preview" />
+        <img src="image16.jpeg" alt="preview" />
+        <img src="Frierenfoto.jpeg" alt="preview" />
+        <img src="Fern.jpeg" alt="preview" />
+        <img src="Stark.jpeg" alt="preview" />
+      </div>
+      <div style="padding:1rem 1rem 1.25rem;">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap;">
+          <span class="tag">Wallpaper</span>
+          <span class="tag">.ZIP</span>
+          <span class="tag">4K</span>
+          <span style="margin-left:auto;font-size:.68rem;font-weight:400;color:rgba(255,255,255,.3);">Feb 2025</span>
+        </div>
+        <h3 style="color:#fff;font-size:1rem;font-weight:600;margin:0 0 .4rem;line-height:1.35;">Anime Wallpaper 4K</h3>
+        <p style="color:rgba(255,255,255,.45);font-size:.82rem;font-weight:300;margin:0 0 .75rem;line-height:1.55;">
+          Wallpaper Frieren ความละเอียดสูง ใช้เป็น Background สำหรับ Desktop, Stream หรือ Web
+        </p>
+        <div>
+          <button onclick="toggleDetail(this)" style="background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.4);font-size:.78rem;font-weight:400;font-family:inherit;">
+            <svg style="width:14px;height:14px;transition:transform .3s;" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 011.06 0L10 11.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.22 9.28a.75.75 0 010-1.06z"/></svg>
+            วิธีใช้งาน / รายละเอียด
+          </button>
+          <div class="detail-body" style="margin-top:.6rem;">
+            <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:.85rem;font-size:.8rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;">
+              <strong style="font-weight:600;color:#fff;display:block;margin-bottom:.4rem;">รายละเอียด</strong>
+              • ความละเอียด 3840×2160 (4K)<br/>
+              • ฟอร์แมต PNG / JPEG<br/>
+              • ใช้ได้ฟรีสำหรับ non-commercial เท่านั้น<br/>
+              • ดาวน์โหลดแล้ว extract ZIP แล้วนำไปใช้ได้เลย
+            </div>
+          </div>
+        </div>
+        <button onclick="openGateway('#','Anime Wallpaper 4K','https://youtube.com')"
+          class="btn-main" style="margin-top:1rem;">
+          รับลิงก์ดาวน์โหลด
+        </button>
+      </div>
+    </div>
+
+    <!-- ─ Card 6: Font Pack ─ -->
+    <div class="dl-card card-anim" data-ci="5">
+      <div class="img-reel p-3" style="padding-bottom:0;">
+        <img src="image01.jpeg" alt="preview" />
+        <img src="image05.jpeg" alt="preview" />
+        <img src="image09.jpeg" alt="preview" />
+      </div>
+      <div style="padding:1rem 1rem 1.25rem;">
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap;">
+          <span class="tag">Fonts</span>
+          <span class="tag">.ZIP</span>
+          <span style="margin-left:auto;font-size:.68rem;font-weight:400;color:rgba(255,255,255,.3);">Jan 2025</span>
+        </div>
+        <h3 style="color:#fff;font-size:1rem;font-weight:600;margin:0 0 .4rem;line-height:1.35;">Fantasy Font Collection</h3>
+        <p style="color:rgba(255,255,255,.45);font-size:.82rem;font-weight:300;margin:0 0 .75rem;line-height:1.55;">
+          รวม Font สไตล์แฟนตาซีที่ใช้ใน Thumbnail และ Overlay ของช่อง YouTube
+        </p>
+        <div>
+          <button onclick="toggleDetail(this)" style="background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.4);font-size:.78rem;font-weight:400;font-family:inherit;">
+            <svg style="width:14px;height:14px;transition:transform .3s;" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 011.06 0L10 11.94l3.72-3.72a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.22 9.28a.75.75 0 010-1.06z"/></svg>
+            วิธีใช้งาน / รายละเอียด
+          </button>
+          <div class="detail-body" style="margin-top:.6rem;">
+            <div style="background:rgba(255,255,255,.04);border-radius:10px;padding:.85rem;font-size:.8rem;font-weight:300;color:rgba(255,255,255,.6);line-height:1.7;">
+              <strong style="font-weight:600;color:#fff;display:block;margin-bottom:.4rem;">วิธีติดตั้ง Font</strong>
+              1. แตกไฟล์ ZIP<br/>
+              2. Windows: คลิกขวาที่ไฟล์ .ttf → "Install"<br/>
+              3. Mac: ดับเบิลคลิกที่ไฟล์ → "Install Font"<br/>
+              4. เปิด Application แล้ว Font จะปรากฏทันที
+            </div>
+          </div>
+        </div>
+        <button onclick="openGateway('#','Fantasy Font Collection','https://youtube.com')"
+          class="btn-main" style="margin-top:1rem;">
+          รับลิงก์ดาวน์โหลด
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ GALLERY ═══════════════════════ -->
+<section id="gallery" style="background:#000;padding:clamp(3rem,6vw,5rem) 0;overflow:hidden;">
+  <h2 id="gal-heading" class="text-white font-black text-center"
+      style="font-size:clamp(2rem,6vw,4rem);letter-spacing:-.03em;margin:0 0 .5rem;">
+    <span class="letter-sec" data-i="0">แ</span><span class="letter-sec" data-i="1">ก</span><span class="letter-sec" data-i="2">ล</span><span class="letter-sec" data-i="3">เ</span><span class="letter-sec" data-i="4">ล</span><span class="letter-sec" data-i="5">อ</span><span class="letter-sec" data-i="6">รี</span>
+  </h2>
+  <p style="text-align:center;color:rgba(255,255,255,.25);font-size:.75rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;margin:0 0 2.5rem;">Gallery</p>
+
+  <div style="overflow:hidden;margin-bottom:1rem;">
+    <div class="reel reel-right">
+      <img src="image01.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image02.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image03.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image04.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image05.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image06.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image07.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image08.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <!-- duplicate for seamless -->
+      <img src="image01.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image02.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image03.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image04.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image05.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image06.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image07.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image08.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+    </div>
+  </div>
+  <div style="overflow:hidden;">
+    <div class="reel reel-left">
+      <img src="image09.jpeg"  style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image10.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image11.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image12.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image13.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image14.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image15.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image16.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image09.jpeg"  style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image10.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image11.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image12.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image13.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image14.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image15.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+      <img src="image16.jpeg" style="height:200px;width:auto;object-fit:cover;border-radius:12px;margin-right:10px;flex-shrink:0;" />
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background:#000;border-top:1px solid rgba(255,255,255,.06);padding:2rem 1rem;text-align:center;">
+  <p style="color:rgba(255,255,255,.2);font-size:.78rem;font-weight:300;margin:0;">
+    © 2026 Vireth — ของแจกทุกชิ้นใช้เพื่อการศึกษาและ Non-Commercial เท่านั้น
+  </p>
+</footer>
+
+<!-- ═══════════════════════ GATEWAY MODAL ═══════════════════════ -->
+<div class="overlay" id="gw">
+  <div class="modal">
+    <!-- Title -->
+    <p style="color:rgba(255,255,255,.35);font-size:.72rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;margin:0 0 .35rem;">กำลังเตรียมไฟล์</p>
+    <h3 id="gw-name" style="color:#fff;font-size:1.05rem;font-weight:600;margin:0 0 1.5rem;line-height:1.3;"></h3>
+
+    <!-- Countdown ring -->
+    <div id="gw-countdown" class="ring-wrap">
+      <svg viewBox="0 0 120 120">
+        <circle class="ring-track" cx="60" cy="60" r="54"/>
+        <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="54"/>
+      </svg>
+      <div class="ring-num">
+        <span id="gw-num">30</span>
+        <span>วินาที</span>
+      </div>
+    </div>
+
+    <p style="color:rgba(255,255,255,.3);font-size:.78rem;font-weight:300;margin:0 0 1.25rem;line-height:1.6;">
+      กรุณารอสักครู่ ระบบกำลังยืนยันการเข้าถึง<br/>ระหว่างรอ คุณสามารถไปดูวิดีโอได้เลย
+    </p>
+
+    <!-- Watch video while waiting -->
+    <a id="gw-yt" href="#" target="_blank" rel="noopener" class="btn-watch" style="display:inline-flex;margin-bottom:1.5rem;">
+      <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      ดูวิดีโอ YouTube ระหว่างรอ →
+    </a>
+
+    <!-- Link phase -->
+    <div id="gw-link" style="display:none;">
+      <div style="font-size:2rem;margin-bottom:.6rem;">✓</div>
+      <p style="color:rgba(255,255,255,.6);font-size:.85rem;font-weight:300;margin:0 0 1.1rem;">ลิงก์พร้อมแล้ว!</p>
+      <a id="gw-dl" href="#" class="dl-btn" download>⬇ ดาวน์โหลดเลย</a>
+      <p style="color:rgba(255,255,255,.2);font-size:.72rem;font-weight:300;margin:.9rem 0 0;">ลิงก์จะหมดอายุใน 10 นาที</p>
+    </div>
+
+    <button onclick="closeGw()" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,.25);font-size:.75rem;font-weight:300;font-family:inherit;margin-top:1.25rem;display:block;width:100%;">
+      ยกเลิก
+    </button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
